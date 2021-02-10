@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="/jquery-1.7.2.min.js"></script>
+    <script>
+      $(function () {
+        var staffFollow = localStorage.getItem("staffFollow");
+        var styleFavorite = localStorage.getItem("styleFavorite");
+        $.ajax({
+          type: "GET",
+          url:
+            "http://www.dotst.com:8080/staffboardapi/transfer.json?ememno=bf3b0ba0d7ebf3a1bf6f2c452510aea2staffFollow=22609,15311,15356&styleFavorite=1462662,1487482,1550524",
+          dataType: "json",
+          contentType: "application/json",
+          success: function (json) {
+            console.log(json);
+            localStorage.removeItem("staffFollow");
+            localStorage.removeItem("styleFavorite");
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    スタッフボード遷移専用ページです。。。
+  </body>
+</html>
